@@ -137,29 +137,27 @@ Outbound DNS queries to known C2 domain detected from workstation-47
 - Escalate to incident response team
 
 ---
+## Improvements / Future Enhancements
 
-## Screenshots
+Several improvements could strengthen this pipeline for real-world deployment:
 
-### Alert Classifier
-![Alert Classifier](screenshots/alert-classifier.png)
+- **Prompt refinement for classification consistency**  
+  The Alert Classifier occasionally showed inconsistency in severity assignment for borderline alerts. Prompt constraints and additional few-shot examples could improve classification reliability.
 
-### Alert Classifier Response
-![Classifier Response](screenshots/alert-classifier-response.png)
+- **Structured output validation**  
+  Adding JSON schema validation between workflow steps would ensure malformed model outputs do not break downstream automation.
 
-### Threat Analyzer
-![Threat Analyzer](screenshots/threat-analyzer-dashboard.png)
+- **Confidence threshold logic**  
+  Low-confidence classifications could trigger manual analyst review instead of automatically progressing through the pipeline.
 
-### Threat Analyzer Response
-![Threat Analyzer Response](screenshots/threat-analyzer-response.png)
+- **Expanded threat intelligence context**  
+  Integrating a retrieval-based knowledge source such as MITRE ATT&CK documentation or internal threat intelligence could improve analysis accuracy.
 
-### Response Recommender
-![Response Recommender](screenshots/response-rec-dashboard.png)
+- **Persistent logging and audit tracking**  
+  Storing alerts, classifications, and recommendations in a database would improve traceability and support incident review.
 
-### Response Recommender Output
-![Response Output](screenshots/response-recommender-response.png)
-
-### n8n Workflow Pipeline
-![n8n Workflow](screenshots/n8n-chain-pipeline.png)
+- **Human-in-the-loop escalation workflows**  
+  Critical alerts could trigger analyst approval steps rather than relying entirely on automated recommendations.
 
 ---
 
